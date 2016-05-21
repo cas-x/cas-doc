@@ -1,0 +1,77 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "CAS API",
+        "description": "Get Information From CAS",
+        "version": "1.0.0"
+    },
+    "host": "cas.example.com",
+    "schemes": [
+        "https",
+        "http"
+    ],
+    "basePath": "/",
+    "produces": [
+        "application/json",
+        "image/jpeg"
+    ],
+    "paths": {
+        "/public/users/avatar/:username(.+)": {
+            "get": {
+                "summary": "Get User Avatar",
+                "description": "The endpoint returns avatar about specifed username\n",
+                "tags": [
+                    "User"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "avatar of username"
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/public/users/key/:username(.+)": {
+            "get": {
+                "summary": "Get User Public Key",
+                "description": "The endpoint returns public key about specifed username\n",
+                "tags": [
+                    "User"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "public key of username"
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+    },
+    "definitions": {
+        "Error": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
