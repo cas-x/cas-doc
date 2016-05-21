@@ -171,6 +171,40 @@
                 }
             }
         },
+        "/public/users/md5/login": {
+            "post": {
+                "summary": "login user by md5",
+                "description": "The endpoint check whether username password is right\n",
+                "tags": [
+                    "User",
+                    "Public"
+                ],
+                "parameters": [
+                {
+                    "name": "username",
+                    "in": "formData",
+                    "description": "user username",
+                    "required": true,
+                    "type": "string",
+                },
+                {
+                    "name": "password",
+                    "in": "formData",
+                    "description": "user md5 password",
+                    "required": false,
+                    "type": "string",
+                },
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Return"
+                        }
+                    },
+                }
+            }
+        },
     },
     "definitions": {
         "Return": {
