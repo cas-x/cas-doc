@@ -25,14 +25,11 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "avatar of username"
-                    },
-                    "default": {
-                        "description": "Unexpected error",
+                        "description": "avatar of username",
                         "schema": {
-                            "$ref": "#/definitions/Error"
-                        }
-                    }
+                          "type": "binary",
+                        },
+                    },
                 }
             }
         },
@@ -45,33 +42,64 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "public key of username"
-                    },
-                    "default": {
-                        "description": "Unexpected error",
+                        "description": "public key of username",
                         "schema": {
-                            "$ref": "#/definitions/Error"
+                        "type": "object",
+                      }
+                    },
+                }
+            }
+        },
+        "/public/users/login": {
+            "post": {
+                "summary": "Login User",
+                "description": "The endpoint check whether username password is right\n",
+                "tags": [
+                    "User"
+                ],
+                "parameters": [
+                  {
+                    "name":"username",
+                    "in":"form",
+                    "description":"user username",
+                    "required":true,
+                    "type":"string"
+                  },
+                  {
+                    "name":"password",
+                    "in":"form",
+                    "description":"user password",
+                    "required":true,
+                    "type":"string"
+                  },
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Return"
                         }
-                    }
+                    },
                 }
             }
         },
     },
     "definitions": {
-        "Error": {
+        "Return": {
             "type": "object",
             "properties": {
                 "code": {
                     "type": "integer",
                     "format": "int32"
                 },
-                "message": {
+                "msg": {
                     "type": "string"
                 },
                 "value": {
                     "type": "string"
                 }
             }
-        }
+        },
+
     }
 }
