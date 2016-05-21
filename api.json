@@ -58,20 +58,41 @@
                     "User"
                 ],
                 "parameters": [
-                  {
+                {
                     "name": "username",
                     "in": "formData",
-                    "description": "user to add to the system",
+                    "description": "user username",
                     "required": true,
                     "type": "string",
-                  },
-                  {
+                },
+                {
                     "name": "password",
                     "in": "formData",
-                    "description": "user to add to the system",
-                    "required": true,
+                    "description": "user password",
+                    "required": false,
                     "type": "string",
-                  }
+                },
+                {
+                    "name": "dynamic",
+                    "in": "formData",
+                    "description": "user google authorization code",
+                    "required": false,
+                    "type": "string",
+                },
+                {
+                    "name": "staticdynamic",
+                    "in": "formData",
+                    "description": "user username + google authorization code",
+                    "required": false,
+                    "type": "string",
+                },
+                {
+                    "name": "persistence",
+                    "in": "formData",
+                    "description": "save cookie",
+                    "required": false,
+                    "type": "string",
+                }
                 ],
                 "responses": {
                     "200": {
