@@ -21,7 +21,8 @@
                 "summary": "Get User Avatar",
                 "description": "The endpoint returns avatar about specifed username\n",
                 "tags": [
-                    "User"
+                    "User",
+                    "Public"
                 ],
                 "responses": {
                     "200": {
@@ -38,14 +39,15 @@
                 "summary": "Get User Public Key",
                 "description": "The endpoint returns public key about specifed username\n",
                 "tags": [
-                    "User"
+                    "User",
+                    "Public"
                 ],
                 "responses": {
                     "200": {
                         "description": "public key of username",
                         "schema": {
-                        "type": "object",
-                      }
+                            "type": "string",
+                        }
                     },
                 }
             }
@@ -55,7 +57,8 @@
                 "summary": "Login User",
                 "description": "The endpoint check whether username password is right\n",
                 "tags": [
-                    "User"
+                    "User",
+                    "Public"
                 ],
                 "parameters": [
                 {
@@ -93,6 +96,23 @@
                     "required": false,
                     "type": "string",
                 }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Return"
+                        }
+                    },
+                }
+            }
+        },
+        "/public/users/logout": {
+            "post": {
+                "summary": "destory user cookie session",
+                "description": "The endpoint detroy user session by specifed cookie",
+                "tags": [
+                    "Public", "User"
                 ],
                 "responses": {
                     "200": {
