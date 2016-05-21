@@ -27,7 +27,7 @@
                     "200": {
                         "description": "avatar of username",
                         "schema": {
-                          "type": "binary",
+                          "type": "string",
                         },
                     },
                 }
@@ -59,19 +59,19 @@
                 ],
                 "parameters": [
                   {
-                    "name":"username",
-                    "in":"form",
-                    "description":"user username",
-                    "required":true,
-                    "type":"string"
+                    "name": "username",
+                    "in": "formData",
+                    "description": "user to add to the system",
+                    "required": true,
+                    "type": "string",
                   },
                   {
-                    "name":"password",
-                    "in":"form",
-                    "description":"user password",
-                    "required":true,
-                    "type":"string"
-                  },
+                    "name": "password",
+                    "in": "formData",
+                    "description": "user to add to the system",
+                    "required": true,
+                    "type": "string",
+                  }
                 ],
                 "responses": {
                     "200": {
