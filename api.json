@@ -110,9 +110,56 @@
         "/public/users/logout": {
             "post": {
                 "summary": "destory user cookie session",
-                "description": "The endpoint detroy user session by specifed cookie",
+                "description": "The endpoint destroy user session by specifed cookie",
                 "tags": [
                     "Public", "User"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Return"
+                        }
+                    },
+                }
+            }
+        },
+        "/public/users/ssh/login": {
+            "post": {
+                "summary": "check user by ssh pubilc private key",
+                "description": "The endpoint check user by key",
+                "tags": [
+                    "Public", "User"
+                ],
+                "parameters": [
+                {
+                    "name": "username",
+                    "in": "formData",
+                    "description": "user username",
+                    "required": true,
+                    "type": "string",
+                },
+                {
+                    "name": "hash",
+                    "in": "formData",
+                    "description": "hash algo",
+                    "required": true,
+                    "type": "string",
+                },
+                {
+                    "name": "signature",
+                    "in": "formData",
+                    "description": "signatured text by private key",
+                    "required": true,
+                    "type": "string",
+                },
+                {
+                    "name": "clear",
+                    "in": "formData",
+                    "description": "clear text",
+                    "required": true,
+                    "type": "string",
+                },
                 ],
                 "responses": {
                     "200": {
