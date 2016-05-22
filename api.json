@@ -205,6 +205,40 @@
                 }
             }
         },
+        "/public/usres/authorize": {
+            "post": {
+                "summary": "get callback for oauth address",
+                "description": "The endpoint return oauth callback\n",
+                "tags": [
+                    "Oauth",
+                    "Public"
+                ],
+                "parameters": [
+                {
+                    "name": "name",
+                    "in": "formData",
+                    "description": "oauth name",
+                    "required": true,
+                    "type": "string",
+                },
+                {
+                    "name": "debug",
+                    "in": "formData",
+                    "description": "debug mode",
+                    "required": false,
+                    "type": "string",
+                },
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Return"
+                        }
+                    },
+                }
+            }
+        }
     },
     "definitions": {
         "Return": {
