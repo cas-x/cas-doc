@@ -205,7 +205,28 @@
                 }
             }
         },
-        "/public/usres/authorize": {
+        "/public/oauth/authorize": {
+            "get": {
+                "summary": "get callback for oauth address",
+                "description": "The endpoint return oauth callback\n",
+                "tags": [
+                    "Oauth",
+                    "Public"
+                ],
+                "parameters":[
+                {
+                  "name": "name",
+                  "in": "query",
+                  "required": true,
+                  "type": "string",
+                }
+                ],
+                "responses": {
+                  "200": {
+                    "description": "user oauth authorization page",
+                  }
+                }
+            },
             "post": {
                 "summary": "get callback for oauth address",
                 "description": "The endpoint return oauth callback\n",
@@ -256,6 +277,5 @@
                 }
             }
         },
-
     }
 }
