@@ -205,6 +205,54 @@
                 }
             }
         },
+        "/public/oauth/onetime": {
+            "post": {
+              "summary": "check user username and password",
+              "description": "The endpoint return oatuch callback\n",
+              "tags": [
+                "Oauth",
+                "Public"
+              ],
+              "parameters": [
+                {
+                    "name": "name",
+                    "in": "formData",
+                    "description": "oauth name",
+                    "required": true,
+                    "type": "string",
+                },
+                {
+                    "name": "debug",
+                    "in": "formData",
+                    "description": "debug mode",
+                    "required": false,
+                    "type": "string",
+                },
+                {
+                    "name": "username",
+                    "in": "formData",
+                    "description": "user username",
+                    "required": true,
+                    "type": "string",
+                },
+                {
+                    "name": "password",
+                    "in": "formData",
+                    "description": "user password",
+                    "required": false,
+                    "type": "string",
+                },
+              ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Return"
+                        }
+                    },
+                }
+            }
+        },
         "/public/oauth/authorize": {
             "get": {
                 "summary": "get callback for oauth address",
