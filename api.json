@@ -307,6 +307,40 @@
                     },
                 }
             }
+        },
+        "/oauth/users/": {
+            "get": {
+                "summary": "get users for oauth",
+                "description": "The endpoint return users",
+                "tags": [
+                    "Oauth",
+                    "Public"
+                ],
+                "parameters": [
+                {
+                    "name": "keyword",
+                    "in": "formData",
+                    "description": "username keyword",
+                    "required": false,
+                    "type": "string",
+                },
+                {
+                    "name": "is_delete[]",
+                    "in": "formData",
+                    "description": "filter user by is_delete status",
+                    "required": false,
+                    "type": "string",
+                },
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Return"
+                        }
+                    },
+                }
+            }
         }
     },
     "definitions": {
