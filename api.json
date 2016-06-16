@@ -341,6 +341,40 @@
                     },
                 }
             }
+        },
+        "/oauth/users/one": {
+            "get": {
+                "summary": "get users for oauth",
+                "description": "The endpoint return users",
+                "tags": [
+                    "Oauth",
+                    "Public"
+                ],
+                "parameters": [
+                {
+                    "name": "field",
+                    "in": "formData",
+                    "description": "filter field name",
+                    "required": false,
+                    "type": "string",
+                },
+                {
+                    "name": "value",
+                    "in": "formData",
+                    "description": "filter field value",
+                    "required": false,
+                    "type": "string",
+                },
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Return"
+                        }
+                    },
+                }
+            }
         }
     },
     "definitions": {
