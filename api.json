@@ -375,6 +375,40 @@
                     },
                 }
             }
+        },
+        "/oauth/users/self": {
+            "get": {
+                "summary": "get user for specifed code",
+                "description": "The endpoint return user",
+                "tags": [
+                    "Oauth",
+                    "Public"
+                ],
+                "parameters": [
+                {
+                    "name": "name",
+                    "in": "formData",
+                    "description": "oauth app name",
+                    "required": true,
+                    "type": "string",
+                },
+                {
+                    "name": "code",
+                    "in": "formData",
+                    "description": "oauth app get the user code",
+                    "required": true,
+                    "type": "string",
+                },
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Return"
+                        }
+                    },
+                }
+            }
         }
     },
     "definitions": {
