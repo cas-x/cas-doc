@@ -409,6 +409,78 @@
                     },
                 }
             }
+        },
+        "/oauth/users/login": {
+            "post": {
+                "summary": "Login User",
+                "description": "The endpoint check whether username password is right\n",
+                "tags": [
+                    "User",
+                    "Public"
+                ],
+                "parameters": [
+                {
+                    "name": "username",
+                    "in": "formData",
+                    "description": "user username",
+                    "required": true,
+                    "type": "string",
+                },
+                {
+                    "name": "password",
+                    "in": "formData",
+                    "description": "user password",
+                    "required": false,
+                    "type": "string",
+                },
+                {
+                    "name": "dynamic",
+                    "in": "formData",
+                    "description": "user google authorization code",
+                    "required": false,
+                    "type": "string",
+                },
+                {
+                    "name": "staticdynamic",
+                    "in": "formData",
+                    "description": "user username + google authorization code",
+                    "required": false,
+                    "type": "string",
+                },
+                {
+                    "name": "persistence",
+                    "in": "formData",
+                    "description": "save cookie",
+                    "required": false,
+                    "type": "string",
+                }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Return"
+                        }
+                    },
+                }
+            }
+        },
+        "/oauth/users/logout": {
+            "post": {
+                "summary": "destory user cookie session",
+                "description": "The endpoint destroy user session by specifed cookie",
+                "tags": [
+                    "Public", "User"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/Return"
+                        }
+                    },
+                }
+            }
         }
     },
     "definitions": {
